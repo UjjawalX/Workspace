@@ -26,3 +26,8 @@ hs_err_pid*
 .metadata/
 .recommenders/
 RemoteSystemsTempFiles
+.settings/
+Servers/
+target/
+.classpath
+.project
