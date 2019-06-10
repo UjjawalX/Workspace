@@ -1,0 +1,4 @@
+screens: 
+dashboard
+detail
+list heroes/add heroes

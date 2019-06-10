@@ -1,0 +1,9 @@
+
+
+<ul id = "top-heroes">
+    <li *ngFor="let tophero of topheroes"><a routerLink = "./hero-detail/{{tophero.name}}">{{tophero.name}}</a></li>
+</ul>
+<form>
+    <input type = "text" style = "margin: 10px;"/>
+    <button>Search</button>
+    </form>
