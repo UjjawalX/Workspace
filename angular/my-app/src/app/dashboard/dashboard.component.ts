@@ -12,6 +12,7 @@ export class DashboardComponent implements OnInit {
   
   heroes :any;
   topheroes :any;
+  hero: string;
   constructor(private heroservice: HeroService) { }
 
 
@@ -19,5 +20,9 @@ export class DashboardComponent implements OnInit {
     this.heroes = this.heroservice.getheroes();
     this.topheroes  = this.heroes.slice(1,5);
   }
-
+  
+  
+  searchHero(str : string) {
+    this.hero = str;
+  }
 }

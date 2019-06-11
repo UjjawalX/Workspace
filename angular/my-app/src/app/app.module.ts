@@ -7,6 +7,7 @@ import { RouterModule , Routes } from '@angular/router';
 import { AngularRouteModule } from './angular-route/angular-route.module';
 import { HeroDetailsComponent } from './hero-details/hero-details.component';
 import { HeroesComponent } from './heroes/heroes.component';
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { HeroesComponent } from './heroes/heroes.component';
   ],
   imports: [
     BrowserModule,
-    AngularRouteModule
+    AngularRouteModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -4,6 +4,7 @@
     <li *ngFor="let tophero of topheroes"><a routerLink = "./hero-detail/{{tophero.name}}">{{tophero.name}}</a></li>
 </ul>
 <form>
-    <input type = "text" style = "margin: 10px;"/>
-    <button>Search</button>
+    <!--<input #searchme [(ngModel)]='hero' type = "text" style = "margin: 10px;" [ngModelOptions]="{standalone: true}"/>-->
+    <input #searchme (keyup)='searchHero(searchme.value)' type = "text" style = "margin: 10px;"/>
+    <p>{{hero}}</p>
     </form>
