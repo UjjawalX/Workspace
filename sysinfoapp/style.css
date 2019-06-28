@@ -1,0 +1,56 @@
+#sidenav-permanent {
+    position: fixed;
+    top : 0;
+    left : 0;
+    width: 50px;
+    height: 100%;
+    background-color: rgb(234, 238, 26);
+}
+#sidenav {
+    position : fixed;
+    top: 0;
+    left: 50px;
+    width: 120px;
+    height: 100%;
+    background-color: burlywood;
+}
+#sidenav #button-panel {
+    background-color: rgb(163, 247, 8);
+    width: 25px;
+    height: 100%;
+    position: absolute;
+    right: 0px;
+}
+#sidenav #button-panel #open {
+    position: absolute;
+    top: 120px;
+    left: 5px;
+}
+#sidenav #button-panel #close {
+    position: absolute;
+    top: 140px;
+    left: 5px;
+}
+#sidenav #sidenav-content {
+    position: absolute;
+    right: 25px;
+    height: 100%;
+    width: 100px;
+    
+}
+
+#sidenav #sidenav-content a {
+    display: block;
+    text-align: center;
+}
+
+h1 {
+    
+    margin-top: 10px;
+}
+#notearea {
+    margin-left: 195px;
+    margin-top: 10px;
+    height: 100px;
+    width: 150px;
+}

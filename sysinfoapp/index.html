@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SysInfoApp</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="sidenav-permanent">
+        <a onclick = "myapp.load(event)" href="#">NBook</a>
+        <a href="#">Note</a>
+    </div>
+    <div id="sidenav">
+        <div id="sidenav-content">
+            <a href="#">Note1</a>
+            <a href="#">Note2</a>
+        </div>
+        <div id="button-panel">
+            <button id="open" onclick="myapp.open()">o</button>
+            <button id="close" onclick="myapp.close()">c</button>
+        </div>
+
+    </div>
+    <div id="notearea">
+        <h1>Note1</h1>
+        <textarea></textarea>
+    </div>
+</body>
+<script>
+    require('./renderer.js');
+
+</script>
+<script src="script.js"></script>
+
+</html>
