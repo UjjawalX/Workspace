@@ -47,12 +47,18 @@ public class EmployeeController {
 			erepos.delete(o.get());
 	}
 	@GetMapping(path = "/lastname")
-	public List<Employee> findLastname(@RequestParam String lastname) {
-		return erepos.findEmployeewithLastname(lastname);
+	public List<Employee> findLastname(@RequestParam String lname) {
+		return erepos.findEmployeewithLastname(lname);
 	}
 	@GetMapping(path = "/firstname")
 	public List<Employee> findFirstname(@RequestParam(value = "fname" , required = true) String firstname) {
 		return erepos.findEmployeewithFirstname(firstname);
+		
+	}
+	@GetMapping(path = "/firstnamelastname")
+	public List<Employee> findFirstname(@RequestParam(value = "fname" , required = true) String firstname,@RequestParam(value = "lname", required = true) String lname) {
+		
+		return erepos.findEmplyeewithFirstorlastname(firstname, lname);
 		
 	}
 }
