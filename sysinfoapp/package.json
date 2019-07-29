@@ -9,6 +9,7 @@
   "author": "ujj",
   "license": "ISC",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.9.0",
     "electron": "^4.0.4",
     "lodash": "^4.17.11"
   }

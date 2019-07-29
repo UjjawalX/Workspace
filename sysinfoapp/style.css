@@ -31,17 +31,53 @@
     top: 140px;
     left: 5px;
 }
-#sidenav #sidenav-content {
+#sidenav #sidenav-panel {
     position: absolute;
     right: 25px;
     height: 100%;
-    width: 100px;
+    width: 200px;
     
+}
+
+#sidenav #sidenav-panel #top-panel {
+    height:50px;
+    width:95px;
 }
 
 #sidenav #sidenav-content a {
     display: block;
     text-align: center;
+}
+
+#sidenav-permanent a {
+    display: block;
+}
+
+i.fas.fa-book {
+    margin: 5px;
+    
+    font-size: 3em;
+    color: Tomato;
+}
+
+i.fas.fa-align-left {
+    
+    font-size: 3em;
+    margin: 20px 5px;
+}
+
+i.fas.fa-folder-plus {
+    font-size: 2em;
+    margin: 5px 5px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+i.fa-folder-plus {
+    position: absolute;
+    top:0px;
+    right:0px;
 }
 
 h1 {

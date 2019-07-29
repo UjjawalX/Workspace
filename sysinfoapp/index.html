@@ -7,17 +7,22 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>SysInfoApp</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.min.css">
 </head>
 
 <body>
     <div id="sidenav-permanent">
-        <a onclick = "myapp.loadNotebook()">load</a>
-        <a onclick = "myapp.load(event)" href="#">Myfirstbook</a>
-        <a href="#">Note</a>
+
+        <a onclick="myapp.loadNotebook()"><i class="fas fa-book"></i></a>
+        <a onclick="myapp.loadNotes()"><i class="fas fa-align-left"></i></a>
     </div>
     <div id="sidenav">
-        <div id="sidenav-content">
-            
+
+        <div id="sidenav-panel">
+            <div id="top-panel">
+                <i class="fas fa-folder-plus"></i>
+            </div>
+            <div id="sidenav-content"></div>
         </div>
         <div id="button-panel">
             <button id="open" onclick="myapp.open()">o</button>
@@ -27,12 +32,12 @@
     </div>
     <div id="notearea">
         <h1>Note1</h1>
-        <textarea></textarea>
+        <textarea id="textarea"></textarea>
+        <button id="save" onclick="myapp.save()">save</button>
     </div>
 </body>
 <script>
     require('./renderer.js');
-
 </script>
 <script src="script.js"></script>
 
