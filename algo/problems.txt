@@ -1,0 +1,2 @@
+1. we have an array with 3 types of digits 0,1,2
+how do we arrange them so that they are in order.
