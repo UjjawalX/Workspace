@@ -5,15 +5,15 @@
             "Notes": [
                 {
                     "Notename": "Myfirstnote",
-                    "Content": "file2.json"
+                    "Content": "notes/file2.json"
                 },
                 {
                     "Notename": "Mysecondnote",
-                    "Content": "file2.json"
+                    "Content": "notes/file3.json"
                 },
                 {
                     "Notename": "Mythirdnote",
-                    "Content": "file2.json"
+                    "Content": "notes/file2.json"
                 }
             ]
         },
@@ -22,15 +22,15 @@
             "Notes": [
                 {
                     "Notename": "Myfirsntnote",
-                    "Content": "file2.json"
+                    "Content": "notes/file2.json"
                 },
                 {
                     "Notename": "Myseconndnote",
-                    "Content": "file2.json"
+                    "Content": "notes/file2.json"
                 },
                 {
                     "Notename": "Mythirndnote",
-                    "Content": "file2.json"
+                    "Content": "notes/file2.json"
                 }
             ]
         }
