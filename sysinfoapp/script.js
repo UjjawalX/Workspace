@@ -10,6 +10,7 @@ var myapp = {
         for (let i = 0; i < len; i++) {
             document.getElementById("sidenav").getElementsByTagName("a").item(i).style.visibility = "visible";
         }
+        document.getElementById("top-panel").style.visibility = "visible";
         //with lodash
         // var collection = document.getElementById("sidenav").getElementsByTagName("a");
         // lodash.forEach(collection , ( a => a.style.visibility = "visible"));
@@ -21,6 +22,7 @@ var myapp = {
         for (let i = 0; i < len; i++) {
             document.getElementById("sidenav").getElementsByTagName("a").item(i).style.visibility = "hidden";
         }
+        document.getElementById("top-panel").style.visibility = "hidden";
     },
 
     loadNotebook: function () {
@@ -55,6 +57,10 @@ var myapp = {
                 throw err;
             console.log("file saved");
         });
+    },
+    createNewEntry: function(){
+        var node = document.createElement("Input");
+        document.getElementById("sidenav-content").appendChild(node);
     }
 }
 
