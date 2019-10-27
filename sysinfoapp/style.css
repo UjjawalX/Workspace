@@ -10,7 +10,7 @@
     position : fixed;
     top: 0;
     left: 50px;
-    width: 120px;
+    width: 125px;
     height: 100%;
     background-color: burlywood;
 }
@@ -45,6 +45,15 @@
     display: block;
     text-align: center;
 }
+
+#sidenav #sidenav-content a span {
+    position: absolute;
+    left: 90px;
+    z-index: 2;
+    color: aqua;
+    background: black;
+}
+
 
 #sidenav-permanent a {
     display: block;

@@ -31,13 +31,13 @@ var myapp = {
                 throw err;
             }
             var json = JSON.parse(data.toString());
-            removeAllChildNodes();
+            removeAllChildNodes(document.getElementById("sidenav-content"));
             for (let i = 0; i < json.Notebooks.length; i++) {                
-                var node = createChildNodes(json.Notebooks[i].Nbookname);                                
+                var node = createContentElement(json.Notebooks[i].Nbookname);                                
                 node.addEventListener('click', (event) => {                    
-                    removeAllChildNodes();
+                    removeAllChildNodes(document.getElementById("sidenav-content"));
                     for (let j = 0; j < json.Notebooks[i].Notes.length; j++) {                        
-                        var node = createChildNodes(json.Notebooks[i].Notes[j].Notename);
+                        var node = createContentElement(json.Notebooks[i].Notes[j].Notename);
                         node.addEventListener('click', (event) => {                                                     
                             notefilename = json.Notebooks[i].Notes[j].Content;
                             fs.readFile(notefilename , (err,data) => {                                
@@ -64,8 +64,8 @@ var myapp = {
     }
 }
 
-function removeAllChildNodes() {
-    var navNode = document.getElementById("sidenav-content");
+function removeAllChildNodes(parentNode) {
+    var navNode = parentNode;
     var lastchild = navNode.lastElementChild;
     while (lastchild) {
         navNode.removeChild(lastchild);
@@ -73,10 +73,27 @@ function removeAllChildNodes() {
     }
 }
 
-function createChildNodes(name){
-    var textNode = document.createTextNode(name);
-    var node = document.createElement("a");
-    node.appendChild(textNode);
+function createContentElement(name){    
+    var node;
+    if(name.length > 10){
+        shortName = name.substr(0,8).concat("..");
+
+        node = createChildNode(shortName,"a");
+        node.addEventListener('mouseover',(event) => {
+            node.appendChild(createChildNode(name,"span"));
+        });
+        node.addEventListener('mouseout',(event) => {            
+            removeAllChildNodes(node);
+        });
+    } else {
+        node = createChildNode(name,"a");
+    }
     return node;
 }
 
+function createChildNode(name,tag){
+    var textNode = document.createTextNode(name);
+    var node = document.createElement(tag);
+    node.appendChild(textNode);
+    return node;
+}
