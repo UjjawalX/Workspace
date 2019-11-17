@@ -46,6 +46,12 @@
     text-align: center;
 }
 
+#sidenav #sidenav-content input {
+    display: block;
+    width: 90px;
+    margin: 0 0 0 3px;
+}
+
 #sidenav #sidenav-content a span {
     position: absolute;
     left: 90px;
