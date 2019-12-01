@@ -3,23 +3,27 @@ var lodash = require('lodash');
 var notefilename;
 var json;
 var whichNb = -1;
+var sidenavOpn= 1;
 var myapp = {
     open: function () {
-        document.getElementById("sidenav").style.width = "125px";
-        document.getElementById("notearea").style.marginLeft = "195px";
-
+        sidenavOpn = 1;
+        document.getElementById("sidenav").style.width = "235px";
+        document.getElementById("sidenav").children[1].style.width = "15%"; 
+        document.getElementById("sidenav").children[1].children[1].style.visibility = "visible";   
+        document.getElementById("sidenav").children[1].children[0].style.visibility = "hidden";
         var len = document.getElementById("sidenav").getElementsByTagName("a").length;
         for (let i = 0; i < len; i++) {
             document.getElementById("sidenav").getElementsByTagName("a").item(i).style.visibility = "visible";
-        }
+        } //1
         document.getElementById("top-panel").style.visibility = "visible";
-        //with lodash
-        // var collection = document.getElementById("sidenav").getElementsByTagName("a");
-        // lodash.forEach(collection , ( a => a.style.visibility = "visible"));
+        
     },
     close: function () {
+        sidenavOpn = 0;
         document.getElementById("sidenav").style.width = "25px";
-        document.getElementById("notearea").style.marginLeft = "95px";
+        document.getElementById("sidenav").children[1].style.width = "100%";     
+        document.getElementById("sidenav").children[1].children[0].style.visibility = "visible";   
+        document.getElementById("sidenav").children[1].children[1].style.visibility = "hidden";
         var len = document.getElementById("sidenav").getElementsByTagName("a").length;
         for (let i = 0; i < len; i++) {
             document.getElementById("sidenav").getElementsByTagName("a").item(i).style.visibility = "hidden";
@@ -28,13 +32,16 @@ var myapp = {
     },
 
     loadNotebook: function () {
+        if(sidenavOpn == 0){
+            this.open();
+        }    
         fs.readFile('file.json', (err, data) => {
             if (err) {
                 throw err;
             }
             json = JSON.parse(data.toString());            
             createListNotebooks();
-        });
+        });    
     },
     save: function () {
         fs.writeFile(notefilename, document.getElementById("textarea").value, (err) => {
@@ -128,3 +135,8 @@ function createListOfNotes(i){
         document.getElementById("sidenav-content").appendChild(node);
     }
 }
+
+//1.
+//with lodash
+// var collection = document.getElementById("sidenav").getElementsByTagName("a");
+// lodash.forEach(collection , ( a => a.style.visibility = "visible"));
