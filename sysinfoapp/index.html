@@ -30,10 +30,13 @@
         </div>
 
     </div>
-    <div id="notearea">
-        <h1>Note1</h1>
-        <textarea id="textarea"></textarea>
-        <button id="save" onclick="myapp.save()">save</button>
+    
+    <div id="notearea"> 
+        <div id="top-panel"></div>       
+        <div id="content-panel" contentEditable="true"></div>
+        <div id="bottom-panel">
+            <button id="save" onclick="myapp.save()">save</button>
+        </div>        
     </div>
 </body>
 <script>

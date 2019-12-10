@@ -44,7 +44,7 @@ var myapp = {
         });    
     },
     save: function () {
-        fs.writeFile(notefilename, document.getElementById("textarea").value, (err) => {
+        fs.writeFile(notefilename, document.getElementById("content-panel").innerHTML, (err) => {
             if (err)
                 throw err;
             console.log("file saved");
@@ -98,8 +98,8 @@ function removeAllChildNodes(parentNode) {
 
 function createContentElement(name) {
     var node;
-    if (name.length > 10) {
-        shortName = name.substr(0, 8).concat("..");
+    if (name.length > 30) {
+        shortName = name.substr(0, 28).concat("..");
 
         node = createChildNode(shortName, "a");
         node.addEventListener('mouseover', (event) => {
@@ -129,7 +129,7 @@ function createListOfNotes(i){
         node.addEventListener('click', (event) => {
             notefilename = json.Notebooks[i].Notes[j].Content;
             fs.readFile(notefilename, (err, data) => {
-                document.getElementById("textarea").value = data;
+                document.getElementById("content-panel").innerHTML = data;
             })
         });
         document.getElementById("sidenav-content").appendChild(node);
