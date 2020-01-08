@@ -20,7 +20,7 @@ var myapp = {
     },
     close: function () {
         sidenavOpn = 0;
-        document.getElementById("sidenav").style.width = "25px";
+        document.getElementById("sidenav").style.width = "35px";
         document.getElementById("sidenav").children[1].style.width = "100%";     
         document.getElementById("sidenav").children[1].children[0].style.visibility = "visible";   
         document.getElementById("sidenav").children[1].children[1].style.visibility = "hidden";
@@ -131,6 +131,7 @@ function createListOfNotes(i){
             fs.readFile(notefilename, (err, data) => {
                 document.getElementById("content-panel").innerHTML = data;
             })
+            myapp.close();
         });
         document.getElementById("sidenav-content").appendChild(node);
     }
