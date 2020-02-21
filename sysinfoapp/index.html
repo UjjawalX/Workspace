@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>SysInfoApp</title>
+    <link rel="stylesheet" href="./node_modules/highlight.js/styles/default.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.min.css">
 </head>
@@ -19,20 +20,32 @@
     <div id="sidenav">
 
         <div id="sidenav-panel">
+            <div id="overlay1">
+            </div>
             <div id="top-panel">
                 <a onclick="myapp.createNewEntry()"><i class="fas fa-folder-plus"></i></a>
             </div>
             <div id="sidenav-content"></div>
         </div>
         <div id="button-panel">
-            <button id="open" onclick="myapp.open()" style="visibility:hidden;"><i class="fas fa-angle-double-right"></i></button>
+            <button id="open" onclick="myapp.open()"><i class="fas fa-angle-double-right"></i></button>
             <button id="close" onclick="myapp.close()"><i class="fas fa-angle-double-left"></i></button>
         </div>
 
     </div>
     
     <div id="notearea"> 
-        <div id="top-panel"></div>       
+        <div id="top-panel">
+            <select onchange="myapp.applyStyle(this);" id = "codestyle">
+                <option value = "java">Java</option>
+                <option value = "php" selected>PHP</option>
+            </select>
+            <select onchange="myapp.applyStyle(this);" id = "fontstyle">
+                <option value = "italic">Italic</option>
+                <option value = "normal" selected>normal</option>
+            </select>
+            
+        </div>       
         <div id="content-panel" contentEditable="true"></div>
         <div id="bottom-panel">
             <button id="save" onclick="myapp.save()">save</button>
