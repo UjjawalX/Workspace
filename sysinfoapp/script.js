@@ -45,7 +45,7 @@ var myapp = {
         });
     },
     save: function () {
-        fs.writeFile(notefilename, document.getElementById("content-panel").innerHTML, (err) => {
+        fs.writeFile(notefilename, document.getElementById("content-panel").children[0].innerHTML, (err) => {
             if (err)
                 throw err;
             console.log("file saved");
@@ -75,34 +75,40 @@ var myapp = {
             fs.writeFile("file.json", JSON.stringify(json));
         });
     },
-    applyStyle: function (event) {
-        // var selection = window.getSelection();
-        // var text = selection.toString();
-        // var parent = selection.focusNode.parentElement;
-        // replacedText = parent.innerHTML.replace(text,"<span style='font-style: italic'>"+ text+"</span>");
-        // parent.innerHTML = replacedText;         
+    applyStyle: function (event) {            
         var selection = window.getSelection();
         if (selection.rangeCount) {
-            if (event.getAttribute('id') === 'codestyle') {
+            if (event.getAttribute('id') === 'codestyle' & event.value !== 'select code') {
                 var pre = document.createElement('pre');
                 var code = document.createElement('code');
-                code.innerHTML = hljs.highlight(event.value, selection.toString()).value;
-                pre.appendChild(code);
+                var range = selection.getRangeAt(0);
+                
+                if(range.commonAncestorContainer.tagName === 'DIV'){
+                    code.innerHTML = hljs.highlight(event.value, selection.toString()).value;
+                    pre.appendChild(code);    
+                    range.deleteContents();                                
+                    range.insertNode(pre);
+                    range.commonAncestorContainer.appendChild(document.createElement('br'));
+                } else {
+                    var span = document.createElement('span');
+                    span.innerHTML = hljs.highlight(event.value, selection.toString()).value;    
+                    range.deleteContents();                
+                    range.insertNode(span);
+                }                
+                document.getElementById('codestyle').selectedIndex = 0;
+            }
+            if (event.getAttribute('id') === 'fontstyle' & event.value !== 'select font') {
+                var span = document.createElement('span');
+                span.style = "font-style: " + event.value;
+                span.innerHTML = selection.toString();
                 var range = selection.getRangeAt(0);
                 range.deleteContents();
-                range.insertNode(pre);
-                pre.classList.add('pretty-code');
-            }
-            if (event.getAttribute('id') === 'fontstyle') {                
-                    var span = document.createElement('span');
-                    span.style = "font-style: "+event.value;
-                    span.innerHTML = selection.toString();
-                    var range = selection.getRangeAt(0);
-                    range.deleteContents();
-                    range.insertNode(span);                
+                range.insertNode(span);
+                document.getElementById('fontstyle').selectedIndex = 0;
             }
         }
     }
+
 }
 
 function createListNotebooks() {
@@ -157,7 +163,7 @@ function createListOfNotes(i) {
         node.addEventListener('click', (event) => {
             notefilename = json.Notebooks[i].Notes[j].Content;
             fs.readFile(notefilename, (err, data) => {
-                document.getElementById("content-panel").innerHTML = data;
+                document.getElementById("content-panel").children[0].innerHTML = data;
             })
             myapp.close();
         });

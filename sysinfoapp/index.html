@@ -37,16 +37,20 @@
     <div id="notearea"> 
         <div id="top-panel">
             <select onchange="myapp.applyStyle(this);" id = "codestyle">
+                <option value = "select code" selected >select code</option>
                 <option value = "java">Java</option>
-                <option value = "php" selected>PHP</option>
+                <option value = "php" >PHP</option>
             </select>
             <select onchange="myapp.applyStyle(this);" id = "fontstyle">
+                <option value = "select font" selected>select font</option>
                 <option value = "italic">Italic</option>
-                <option value = "normal" selected>normal</option>
+                <option value = "normal">normal</option>
             </select>
             
         </div>       
-        <div id="content-panel" contentEditable="true"></div>
+        <div id="content-panel" >
+            <div contentEditable="true"></div>
+        </div>
         <div id="bottom-panel">
             <button id="save" onclick="myapp.save()">save</button>
         </div>        
