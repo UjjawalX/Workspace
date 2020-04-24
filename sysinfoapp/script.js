@@ -83,7 +83,8 @@ var myapp = {
                 var code = document.createElement('code');
                 var range = selection.getRangeAt(0);
                 
-                if(range.commonAncestorContainer.tagName === 'DIV'){
+                // if(range.commonAncestorContainer.tagName === 'DIV'){
+                if (selection.focusNode.parentElement.tagName === 'DIV') {
                     code.innerHTML = hljs.highlight(event.value, selection.toString()).value;
                     pre.appendChild(code);    
                     range.deleteContents();                                
@@ -97,7 +98,7 @@ var myapp = {
                 }                
                 document.getElementById('codestyle').selectedIndex = 0;
             }
-            if (event.getAttribute('id') === 'fontstyle' & event.value !== 'select font') {
+            else if (event.getAttribute('id') === 'fontstyle' & event.value !== 'select font') {
                 var span = document.createElement('span');
                 span.style = "font-style: " + event.value;
                 span.innerHTML = selection.toString();
