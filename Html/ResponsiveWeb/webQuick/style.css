@@ -1,0 +1,379 @@
+@font-face {
+    font-family: 'myfont';
+    src: url('Balsamiq_Sans/BalsamiqSans-Regular.ttf') format('woff2'),
+         url('Balsamiq_Sans/balsamiqsans-regular-webfont.woff') format('woff'),
+         url('Balsamiq_Sans/BalsamiqSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+#page { max-width: 1200px; margin: 0 auto; position: relative }
+
+body {
+    font-family: 'myfont', sans-serif; font-size: 16px;font-weight: 300;color:#555;
+}
+h1 {margin: 0 0 1em 0; font-size: 2.8em; font-weight: 700;}
+h2 {margin: 0 0 .5em 0; font-size: 1.6em; font-weight: 700; line-height: 1.1em}
+h3 {margin: 0 0 .5em 0; font-size: 1.3em; font-weight: 700;}
+h4 {margin: 0 0 1.5em 0; font-size: 1em; font-weight: 700;}
+p {margin: 0 0 1em 0;}
+a {color: #007eff}
+a:visited {color: #65b1ff } 
+
+a.btn { font-size: 1.2em; text-decoration: none; color: #fff; border: 1px solid #fff; padding: 4px 15px; transition: background-color .5s}
+
+a.btn:hover { background-color: rgba(0, 0, 0, 0.3);}
+
+header {height:430px; background:#cf0004 url(./images/banner_1200.jpg) no-repeat center bottom;background-size:contain;position: relative;}
+
+header a.logo {
+    z-index: 1;
+    position: absolute;
+    display: block; width: 160px; height: 66px;
+    background: url("images/logo.svg") no-repeat 0 0; background-size: contain;
+    top: 15px;
+    left: 20px;
+}
+
+header a.logo span {display: none}
+
+header div.hero { position: absolute; width: 42%; top:130px; left: 55%;}
+
+header div.hero h1 {line-height: 1em; margin: 0 0 30px 0; color: #fff}
+
+section.main { margin-top:10px; margin-bottom:20px;}
+
+section::after{ content: '';display:block;clear:both}
+
+section.main aside { float:left; width: 33%; text-align: center;}
+
+section.main .content { margin: 15px; padding-top: 85px; background: no-repeat center top ; background-size: 75px 75px;}
+
+section.main aside a { color: #000 ; text-decoration: none;}
+
+section.main aside a:hover { text-decoration: underline;}
+
+section.main .content.trending { background-image: url(images/icon_star.svg);}
+
+section.main .content.finding { background-image: url(images/icon_marker.svg);}
+
+section.main .content.tools { background-image: url(images/icon_gear.svg);}
+
+/* section.main {background-color: grey;} */
+
+section.atmosphere { background-color: #cc6633; padding-top: 30px; padding-bottom: 30px; color:#fff }
+
+section.atmosphere article { background: #cc6633 url(images/photo_lounge.jpg) no-repeat 20px 0; padding:0 20px 0 555px ; min-height: 220px;}
+
+section.how-to { background-color: rgb(190, 185, 185); position: relative;}
+
+section.how-to aside {float:left; width: 30%; }
+
+section.how-to aside .content {padding: 30px 30px 20px 20px;}
+
+section.how-to aside .content img {display: block; margin-bottom: 15px; width: 70%;}
+
+section.how-to aside .content h4 {margin-bottom: 0;}
+
+section.how-to aside .content p {margin-bottom: 0.5em;}
+
+section.how-to aside .content a {display: inline-block; color: #cc6633; font-weight: 700;}
+
+section.how-to blockquote { margin: 0; width: 32%; position: absolute; bottom: 0 ; right: 5% ; background-color: #fff; color: #444}
+
+section.how-to blockquote p { margin: 30px 30px 20px 50px;}
+
+section.how-to blockquote p.quote { font-style: italic; font-size: 1.2em;}
+
+section.how-to blockquote p.credit {
+    color: #777;
+    font-size: .9em; 
+    margin-top: 0;
+    padding-left: 20px; 
+    line-height: 1.3em;
+    position:relative;
+}
+
+section.how-to blockquote::before { 
+    content:'\201c'; 
+    color: #d2bd65;
+    position: absolute;
+    top: 10px;
+    left: 8px;
+    font-size: 5em;
+    font-family: serif; 
+}
+
+section.how-to blockquote p.quote::after {
+    content: '\201d'; font-family: serif;  
+}
+ 
+section.how-to blockquote p.credit::before { content:'\2014'; position: absolute; top: -1px; left: 0;}
+
+/* common nav */
+
+nav {
+    position: absolute;
+    top:0px ;left: 0px;
+    padding:50px 0 0 0;
+    width: 100%;
+    background-color:rgba(0, 0, 0, 0.93);
+    /* opacity: 50%; */
+}
+
+nav a[aria-haspopup]::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 15px;
+    left: 145px;
+    border-top: 6px solid #fff;
+    border-bottom: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-left: 3px solid transparent;    
+}
+
+nav ul{
+    list-style: none; margin: 0; padding: 0;    
+}
+
+
+
+nav > ul {padding-left: 200px;}
+
+nav ul li a:visited { color: #fff;}
+
+nav ul li a:hover { background-color: red}
+
+
+
+/* nav::after { content: '';clear:both; display: block;} */
+
+nav > ul > li { float: left;}
+
+/* nav ul li { background-color:rgb(219, 123, 123)} */
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    width: 125px;
+    padding: 10px 20px;  
+    text-align: center; 
+    
+}
+
+
+nav ul ul { display: none;}
+
+nav ul li:hover > ul {
+    display: block;    
+    
+}
+
+nav div#collapseable-btn {
+    width:46px;
+    height:40px;
+    position: absolute; 
+    right: 5%;
+    top: 30px;
+    display: none;
+}
+
+nav div#collapseable-btn span {
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 4px;
+    margin-bottom: 6px;
+    display: block;
+    
+    transition: transform 100ms linear 0s;  
+}
+
+nav div#collapseable-btn.open span {
+
+    transform-origin: 19%;
+}
+nav div#collapseable-btn.open span:first-child{
+    transform: rotate(45deg);
+    
+    
+}
+
+nav div#collapseable-btn.open span:nth-child(2){
+    visibility: hidden;
+}
+
+nav div#collapseable-btn.open span:last-child{
+    transform: rotate(-45deg);
+    
+    
+}
+
+footer {
+    margin-top: 10px;
+    background-color:rgba(0, 0, 0, 0.93);
+    text-align: center;
+}
+
+@media screen and (max-width: 1000px) {
+    header {
+        background-image: url(./images/banner_825.jpg);
+        height: 330px;
+    }
+    header .hero h1 {
+        font-size: 1.96em;
+    }
+
+    section.how-to blockquote {
+        font-size: 12px;
+    }
+    
+    nav {
+        padding-top: 70px;
+    }
+    nav > ul {
+        padding-left: 0px;
+        padding-top: 40px;
+
+    }
+
+    nav > ul > li > ul > li {
+        background-color:rgb(226, 165, 165);
+    }
+
+    nav > ul > li > ul > li > ul > li {
+        background-color:rgb(226, 192, 192);
+    }
+
+    
+    nav ul li{
+        float: none;
+        text-align: center;
+    }
+    nav ul li a {
+        width: 100%;
+    }
+
+    nav a[aria-haspopup]::after {
+        left: 63%;
+    }
+    nav div#collapseable-btn {
+        
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+    }
+    nav ul.open {
+        display: block;
+    } 
+}
+
+@media screen and (max-width: 800px) {
+    header {    
+        background-image: url(./images/banner_625.jpg);    
+        height: 247px;
+    }
+    header .hero h1 {
+        font-size: 1.37em;
+    }    
+    header .hero a.btn {
+        font-size: 0.9em;
+    }    
+    section.atmosphere article {
+        background-size: 332px auto;
+        background-position-x: 16px;
+        padding-left: 357px;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+    header {        
+        background-image: url(./images/banner_425.jpg);
+        height: 185px;
+    }
+    header .hero h1 {
+        font-size: 0.95em;
+    }
+    header .hero a.btn {
+        font-size: 0.8em;
+    }  
+    header a.logo {
+        background-image: url("./images/logo_small.svg");
+    }    
+
+    header div.hero {
+        top: 90px;
+        width: 56%;
+        left: 45%;
+    }
+    header div.hero h1{
+        margin-bottom: 15px;
+    }
+
+    
+    nav div#collapseable-btn {
+        top: 15px;
+        width: 30px;
+    }
+
+    nav div#collapseable-btn.open span {
+        transform-origin: 3%;
+    }
+
+    section.main aside {
+        float: none;
+        margin-left: auto; margin-right: auto;
+        width: 100%;
+    }
+
+    section.atmosphere article {
+        background-position-x: center;
+        padding: 200px 10px 10px 10px;
+        text-align: center;
+        min-height: 140px;
+    }
+    section.how-to aside {
+        width: 100%;
+    }
+    section.how-to aside:last-of-type{
+        width: 100%;
+        padding-bottom: 200px;
+    }
+    section.how-to aside div img {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    section.how-to aside div {
+        text-align: center;
+    }
+    section.how-to blockquote {
+        right: 3%;
+        width: 55%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
