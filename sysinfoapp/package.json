@@ -11,7 +11,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.9.0",
     "d": "^1.0.1",
-    "electron": "^4.2.11",
+    "electron": "^13.6.6",
     "highlight.js": "^9.17.1",
     "lodash": "^4.17.15"
   }
